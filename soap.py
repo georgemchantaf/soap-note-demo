@@ -21,7 +21,8 @@ def transcribe_openai(audio_path):
     with open(audio_path, "rb") as f:
         transcript = client.audio.transcriptions.create(
             model="whisper-1",
-            file=f
+            file=f,
+            language="en"
         )
     return transcript.text
 
